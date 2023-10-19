@@ -32,12 +32,15 @@ def create_world():
     boy = Boy()
     game_world.add_object(boy, 1)
 
-    grass = Grass()
+    grass = Grass(400, 60)
     game_world.add_object(grass, 0)
 
-    grass = Grass_2()
+    grass = Grass(400, 30)
     game_world.add_object(grass, 2)
 
+    # 클래스를 새로 추가해서 구현하는 경우
+    # grass = Grass_2()
+    # game_world.add_object(grass, 2)
 
 
 def update_world():
