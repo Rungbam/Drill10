@@ -1,6 +1,8 @@
 # 이것은 각 상태들을 객체로 구현한 것임.
 
 from pico2d import get_time, load_image, SDL_KEYDOWN, SDL_KEYUP, SDLK_SPACE, SDLK_LEFT, SDLK_RIGHT
+
+import game_world
 from ball import Ball
 
 # state event check
@@ -166,8 +168,9 @@ class Boy:
         self.state_machine.draw()
 
     def fire_ball(self):
-        ball = Ball()
+        ball = Ball(self.x, self.y, self.face_dir * 10)
         # 생성한 볼을 월드에 넣어줘야 한다.
+        game_world.add_object(ball)
 
         if self.face_dir == 1:
             print('FIRE BALL to right')
