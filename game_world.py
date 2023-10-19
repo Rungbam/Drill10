@@ -10,14 +10,16 @@ def add_object(o, depth = 0):
 
 # 게임월드 객체들을 몽땅 업데이트
 def update():
-    for o in world:
-        o.update()
+    for layer in world:
+        for o in layer:
+            o.update()
 
 
 # 게임월드의 객체들을 몽땅 그리기
 def render():
-    for o in world:
-        o.draw()
+    for layer in world:
+        for o in layer:
+            o.draw()
 
 
 # 객체 삭제
